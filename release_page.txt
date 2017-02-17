@@ -1,0 +1,5 @@
+1. 参考http://electron.atom.io/releases/这个页面
+2. Tip: Use Electron from the command line 这一块去掉
+3. Electron Releases 下面的那些标签点击后直接跳转到相应的版本更新信息
+4. All Releases 按钮去掉
+5. 数据使用假数据，自己编一些，出样式和html就行了
