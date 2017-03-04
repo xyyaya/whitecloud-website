@@ -4,49 +4,180 @@
     <head>
         <meta charset="utf-8">
 
-        <title>White Cloud</title>
+        <title>Whitecloud</title>
 
-        <meta name="description" content="White Cloud's Web site">
+        <meta name="description" content="Whitecloud's Web site">
         <meta name="author" content="pixelcave">
         <meta name="robots" content="noindex, nofollow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
         <!-- END Icons -->
-
-        <!-- Stylesheets -->
-        <!-- Web fonts -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
         <!-- Bootstrap and OneUI CSS framework -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" id="css-main" href="assets/css/oneui.css">
 
+        <style>
+        .sky {
+            height: 100%;
+            background: none repeat 0 0 #34283F;
+            color: #FFF;
+            padding: 12px;
+            font-family: Helvetica;
+            display: block;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            x: 0;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            z-index: 100;
+            flex-wrap: wrap;
+            align-content: center;
+            color: #eee;
+        }
+        .sub-container:first-child {
+            margin-top: 0px;
+        }
+
+        .sub-container {
+            width: 100%;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            margin-top: 20px;
+
+        }
+        button {
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            border-radius: 1px;
+            transition: all .3s;
+            color: #eee;
+            padding: 5px 20px 10px 20px;
+            font-size: 38px;
+        }
+
+        button:hover {
+            background: #eee;
+            color: #050505;
+            font-size:
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        footer{
+            position:absolute;
+            bottom:0;
+            width:100%;
+            height:50px;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 30px;
+            color: #eee;
+            z-index: 102;
+        }
+
+        footer>a {
+            margin-right: 30px;
+            cursor: pointer;
+            color: #eee;
+        }
+        footer>a:hover {
+            color: #eee;
+        }
+        footer>a:last-child {
+            margin-right: 0px;
+        }
+        </style>
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
         <!-- END Stylesheets -->
     </head>
     <body>
         <!-- Page Container -->
-        Hello World
-        <!-- END Page Container -->
+        <section class="sky">
+            <div class="container">
+                <div class="sub-container">
+                    <img src="assets/img/snow.png" height="200px"></img><span style="font-size:100px;">Whitecloud</span>
+                </div>
+                <div class="sub-container">
+                    <div id="introduce" style="font-size:23px;height:23px;"></div>
+                </div>
+                <div class="sub-container">
+                    <a href="javascript:void(0);">
+                        <button>
+                            <div>Download</div>
+                            <div style="font-size: 14px;">Alpha 0.1.0</div>
+                        </button>
+                    </a>
+                </div>
 
+                <br/>
+            </div>
+        </section>
+        <!-- END Page Container -->
+        <footer>
+            <a href="http://weibo.com/xueyingyaya"><i class="fa fa-weibo"></i></a> <a data-toggle="popover" data-placement="top" data-content="615379630"><i class="fa fa-qq"></i></a>
+        </footer>
         <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
         <script src="assets/js/core/jquery.min.js"></script>
         <script src="assets/js/core/bootstrap.min.js"></script>
-        <script src="assets/js/core/jquery.slimscroll.min.js"></script>
         <script src="assets/js/core/jquery.scrollLock.min.js"></script>
-        <script src="assets/js/core/jquery.appear.min.js"></script>
-        <script src="assets/js/core/jquery.countTo.min.js"></script>
         <script src="assets/js/core/jquery.placeholder.min.js"></script>
         <script src="assets/js/core/js.cookie.min.js"></script>
         <script src="assets/js/app.js"></script>
 
+        <script src="assets/js/plugins/snow/snow.js"></script>
+        <script src="assets/js/plugins/TheaterJS/theater.min.js"></script>
         <!-- Page JS Code -->
-        <script src="assets/js/plugins/jquery-vide/jquery.vide.min.js"></script>
         <script>
-            jQuery(function () {
-                // Init page helpers (Appear plugin)
-                App.initHelpers('appear');
+            let introduces = [
+                "将存档备份保存在云端，随时随地继续游戏",
+                "回滚存档备份，再也不用担心误操作删除重要存档",
+                "自动同步多个设备，始终保持最新存档",
+                "记录游戏时间，看看到底玩了多久",
+                "收藏存档备份，永久保存重要时刻",
+                "从云端下载存档备份，重装系统也能轻松保留存档",
+                "还原存档备份，手贱覆盖重要存档也不慌张"
+            ].sort(function(a, b) {
+                return Math.random()-0.5;
             });
+            let theater = theaterJS({
+                minSpeed: 200,
+                maxSpeed: 200
+            });
+            theater.addActor('introduce', {
+                accuracy: 1
+            });
+            introduces.forEach(function(word) {
+                theater.addScene("introduce:" + word, 1000);
+            })
+            theater.addScene(theater.replay);
         </script>
     </body>
 </html>
