@@ -77,7 +77,7 @@ function onResize() {
   ctx.fillStyle = '#FFF';
 
   var wasActive = active;
-  active = true;
+  active = width > 225;
 
   if (!wasActive && active) {
     requestAnimFrame(update);
